@@ -1,0 +1,78 @@
+body{
+    background-color: #000000;
+    font-family: 'Bowlby One SC', cursive;
+}
+
+.board {
+    margin: auto;
+    width: 50%;
+    height: 200px;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    text-align: center;
+    background-color: #ffffff;
+
+}
+
+.score {
+    margin-top: 50px;
+    background-color: transparent;
+}
+
+.btns {
+    text-align: center;
+}
+
+.btn-primary, .btn-primary:hover {
+    background-color: blue;
+}
+
+.btn-warning, .btn-warning:hover {
+    background-color: yellow;
+}
+
+.btn-danger, .btn-danger:hover{
+    background-color: red;
+}
+
+.btn-info, .btn-info:hover{ 
+    background-color: lightblue;
+}
+
+.btn-success, .btn.info:hover{
+    background-color: green;
+}
+
+.btn {
+    width: 50px;
+    height: 50px;
+}
+
+.score{
+    width: 50%;
+    margin: auto;
+    margin-top: 50px;
+    text-align: center;
+}
+
+.countDown {
+    margin: auto;
+    width: 50%;
+    margin-bottom: 50px;
+    margin-top: 20px;
+    
+}
+
+.timer {
+    color: black;
+    font-size: 100px !important;
+    text-align: center;
+    margin-top: 50px;
+    color: #ffffff;
+}
+
+.list{
+    padding-top: 150px;
+    margin: auto;
+    color: #ffffff;
+}
