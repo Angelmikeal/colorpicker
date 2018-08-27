@@ -17,6 +17,7 @@ function timer() {
             $('.timer').text(time);
             $('.board').css('background-color', 'rgb(255, 255, 255)');
             clearInterval(count);
+            
         } else {
             $('.timer').text(time--)
         }
