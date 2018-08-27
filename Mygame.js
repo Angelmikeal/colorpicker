@@ -13,8 +13,10 @@ function timer() {
             begin = false;
             score = 0;
             time = 10;
+            $('.result').text(score);
+            $('.timer').text(time);
+            $('.board').css('background-color', 'rgb(255, 255, 255)');
             clearInterval(count);
-            $('.board').css('background-color', 'rgb(255, 255, 255)')
         } else {
             $('.timer').text(time--)
         }
