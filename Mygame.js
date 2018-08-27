@@ -1,30 +1,34 @@
 var colorNum;
 let score = 0;
-let time = 5;
+let time = 10;
 let begin = false;
 
-$('.result').text(score)
+$('.result').text(score);
 
-
-var gameStart = function () {
-    begin = !begin
-
- var fameTime = setInterval(function () {
-        time--;
-        $('.timer').text(time)
-        if (time <= 0) {
-            alert('GAME OVER ' + 'you scored: ' + score)
-            location = location
+function timer() {
+    var count = setInterval(counter, 1000)
+    function counter() {
+        if (time === 0) {
+            alert('GAME OVER ' + 'you scored: ' + score);
+            begin = false;
+            score = 0;
+            time = 10;
+            clearInterval(count);
+            $('.board').css('background-color', 'rgb(255, 255, 255)')
+        } else {
+            $('.timer').text(time--)
         }
-    }, 1000);
+    }
 }
 
 $('#start').click(function (event) {
     event.preventDefault();
-    numSelector();
-    gameStart();
-});
-
+    if (begin === false) {
+        begin = !begin;
+        numSelector();
+        timer();
+    }
+})
 
 
 var numSelector = function () {
@@ -32,21 +36,21 @@ var numSelector = function () {
 
     $('.instruction').html(' ');
 
-    function colorPicker () {
+    function colorPicker() {
 
         if ((colorNum === 0)) {
             $('.board').css('background-color', 'rgb(0, 0, 255)')
         }
-         else if  ((colorNum === 1)) {
+        else if ((colorNum === 1)) {
             $('.board').css('background-color', 'rgb(127, 199, 255)')
         }
-         else if  ((colorNum === 2)) {
+        else if ((colorNum === 2)) {
             $('.board').css('background-color', 'rgb(255, 0, 0)')
         }
-         else if  ((colorNum === 3)) {
+        else if ((colorNum === 3)) {
             $('.board').css('background-color', 'rgb(255, 255, 0)')
         }
-         else if  ((colorNum === 4)) {
+        else if ((colorNum === 4)) {
             $('.board').css('background-color', 'rgb(0, 255, 0)')
         }
 
@@ -58,77 +62,78 @@ var numSelector = function () {
 
 
 $('.btn-primary').click(function (e) {
-    event.preventDefault();
+    e.preventDefault();
     if ((begin === true) && ($('.board').css('background-color') === 'rgb(0, 0, 255)')) {
-        numSelector()
-        score += 2
-        time+=1
-        $('.result').text(score)
-    }  else if  ((begin === true) && ($('.board').css('background-color') !== 'rgb(0, 0, 255)')) {
-        score -= 3
+        numSelector();
+        score += 2;
+        $('.timer').text(time += 1);
+        $('.result').text(score);
+    } else {
+        score -= 3;
         $('.result').text(score);
     }
 })
 
 
 $('.btn-warning').click(function (e) {
-    event.preventDefault();
+    e.preventDefault();
     if ((begin === true) && ($('.board').css('background-color') === 'rgb(255, 255, 0)')) {
-        numSelector()
-        score += 2
-        time+=1
-        $('.result').text(score)
-    } else if ((begin === true) && ($('.board').css('background-color') !== 'rgb(255, 255, 0)')){
-        score -= 3
+        numSelector();
+        score += 2;
+        $('.timer').text(time += 1);
         $('.result').text(score);
-        numSelector()
+
+    } else {
+        score -= 3;
+        $('.result').text(score);
+        numSelector();
     }
 })
 
 
 
 $('.btn-danger').click(function (e) {
-    event.preventDefault();
+    e.preventDefault();
     if ((begin === true) && ($('.board').css('background-color') === 'rgb(255, 0, 0)')) {
-        numSelector()
-        score += 2
-        time+=1
-        $('.result').text(score)
-    } else if ((begin === true) && ($('.board').css('background-color') !== 'rgb(255, 0, 0)')) {
-        score -= 3
+        numSelector();
+        score += 2;
+        $('.timer').text(time += 1);
         $('.result').text(score);
-        numSelector()
+    } else {
+        score -= 3;
+        $('.result').text(score);
+        numSelector();
     }
 })
 
 
 
 $('.btn-info').click(function (e) {
-    event.preventDefault();
+    e.preventDefault();
     if ((begin === true) && ($('.board').css('background-color') === 'rgb(127, 199, 255)')) {
-        numSelector()
-        score += 2
-        time+=1
-        $('.result').text(score)
-    } else if ((begin === true) && ($('.board').css('background-color') !== 'rgb(127, 199, 255)')) {
-        score -= 3
+        numSelector();
+        score += 2;
+        $('.timer').text(time += 1);
         $('.result').text(score);
-        numSelector()
+    } else {
+        score -= 3;
+        $('.result').text(score);
+        numSelector();
     }
 })
 
 
 $('.btn-success').click(function (e) {
-    event.preventDefault();
+    e.preventDefault();
     if ((begin === true) && ($('.board').css('background-color') === 'rgb(0, 255, 0)')) {
-        numSelector()
-        score += 2
-        time+=1
-        $('.result').text(score)
-    } else if ((begin === true) && ($('.board').css('background-color') !== 'rgb(0, 255, 0)')) {
-        score -= 3
+        numSelector();
+        score += 2;
+        $('.timer').text(time += 1);
         $('.result').text(score);
-        numSelector()
+    } else {
+        score -= 3;
+        $('.result').text(score);
+        numSelector();
     }
 })
 
